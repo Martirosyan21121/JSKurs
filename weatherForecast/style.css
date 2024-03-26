@@ -65,8 +65,17 @@ h1 {
 .forecast-item {
     width: calc(20% - 10px); /* Adjust width to accommodate two items in a row with spacing */
     border: 2px solid #007bff;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 10px;
-    margin-bottom: 20px;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.forecast-item2 {
+    width: calc(30% - 10px); /* Adjust width to accommodate two items in a row with spacing */
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
     box-sizing: border-box; /* Include padding and border in the width calculation */
 }

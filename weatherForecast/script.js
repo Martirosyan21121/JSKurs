@@ -30,16 +30,16 @@ $(document).ready(function () {
         let humidity = data.main.humidity;
         let windSpeed = data.wind.speed;
         let weatherIcon = data.weather[0].icon;
-
+        let selectedCityInput = document.getElementById('locationInput');
         let currentWeatherHtml = `
-            <div id="currentWeather">
-                <h2 style="color: #007bff">Current Weather</h2>
+            <div class="forecast-item2">
+                <h2 style="color: #007bff">Current Weather in ${selectedCityInput.value.charAt(0).toUpperCase() + selectedCityInput.value.slice(1)}</h2>
                 <h4 style="color: #0066d2">Temperature: ${temperature}°C</h4>
                 <h4 style="color: #0066d2">Humidity: ${humidity}%</h4>
                 <h4 style="color: #0066d2">Wind Speed: ${windSpeed} m/s</p>
-                <img src="http://openweathermap.org/img/wn/${weatherIcon}.png" alt="Weather Icon">
+                <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Weather Icon">
             </div>
-         <h2 style="text-align: center; color: #007bff">5-Day Forecast</h2>
+         <h2 style="text-align: center; color: #007bff">5-Day Forecast in ${selectedCityInput.value.charAt(0).toUpperCase() + selectedCityInput.value.slice(1)}</h2>
 `;
 
         $('#weatherData').html(currentWeatherHtml);
@@ -61,7 +61,7 @@ $(document).ready(function () {
                     <h3 style="color: #007bff"> ${date.toDateString()}</h3>
                     <h4 style="color: #0056b3">Temperature High: ${temperatureHigh}°C</h4>
                     <h4 style="color: #0056b3">Temperature Low: ${temperatureLow}°C</h4>
-                    <img src="http://openweathermap.org/img/wn/${weatherIcon}.png" alt="Weather Icon">
+                    <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Weather Icon">
                 </div> 
             `;
         }
