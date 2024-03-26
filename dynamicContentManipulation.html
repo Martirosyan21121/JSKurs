@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Content Manipulation</title>
+</head>
+<body>
+
+<h2>Dynamic Content Manipulation</h2>
+<div id="content" style="display: none;">
+    This is some dynamically toggled content.
+</div>
+<br>
+<button onclick="toggleContent()">Toggle Content</button>
+
+
+</body>
+<script>
+    function toggleContent() {
+        let element = document.getElementById("content");
+        if (element.style.display === "none"){
+            element.style.display = "block";
+        } else {
+            element.style.display = "none"
+        }
+    }
+
+</script>
+</html>

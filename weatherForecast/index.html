@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+</head>
+<body style="background-color: burlywood ">
+
+<div class="container">
+  <h1 style="color: #007bff">Weather Forecast App</h1>
+
+  <div class="input-container">
+    <input type="text" id="locationInput" placeholder="Enter city name or zip code">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <select id="selectCity">
+    <option>New York City</option>
+    <option>Los Angeles</option>
+    <option>Paris</option>
+    <option>Tokyo</option>
+    <option>London</option>
+    <option>Gyumri</option>
+    <option>Sydney</option>
+    <option>Rome</option>
+    <option>Dubai</option>
+    <option>Moscow</option>
+    <option>Berlin</option>
+</select>
+
+
+  <div id="weatherData"></div>
+  <div id="forecastData" class="forecast-container"></div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Request</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loadBtn").click(function (){
+                $.get("data.txt", function (data, status){
+                    $("#result").html(data)
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<h2>Ajax Request Example</h2>
+
+<button id="loadBtn">Load Data</button>
+<div id="result"></div>
+
+</body>
+</html>

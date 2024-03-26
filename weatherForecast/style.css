@@ -1,0 +1,72 @@
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+#locationInput {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background-color: #0056b3;
+}
+
+#selectCity {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    background-color: #f2f2f2;
+    outline: none;
+    cursor: pointer;
+}
+
+#selectCity option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.select-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px; /* Optional: Adjust spacing as needed */
+}
+
+.forecast-container {
+    display: flex; /* Use flexbox to display items in a row */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.forecast-item {
+    width: calc(20% - 10px); /* Adjust width to accommodate two items in a row with spacing */
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}

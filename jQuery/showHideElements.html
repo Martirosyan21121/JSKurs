@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide Elements</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function (){
+        $('#toggleBtn').click(function () {
+            $("#message").toggle()
+        })
+    })
+</script>
+<body>
+<h2>Show/Hide Example</h2>
+
+<button id="toggleBtn">Toggle Message</button>
+<p id="message">This is a hidden message.</p>
+</body>
+</html>

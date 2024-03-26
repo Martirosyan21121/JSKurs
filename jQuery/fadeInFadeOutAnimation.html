@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Fade In/Fade Out Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $("#fadeInBtn").click(function (){
+            $("#fadeMessage").fadeIn();
+        })
+
+        $("#fadeOutBtn").click(function (){
+            $("#fadeMessage").fadeOut()
+        })
+    })
+</script>
+</head>
+<body>
+
+<h2>Fade Animation Example</h2>
+
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+
+<p id="fadeMessage" style="display: none;">This message will fade in and out.</p>
+
+
+</body>
+</html>
