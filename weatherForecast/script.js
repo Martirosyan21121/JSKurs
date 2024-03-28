@@ -9,6 +9,7 @@ $(document).ready(function () {
         }
     });
 
+
     function fetchWeatherData(location) {
         let apiKey = '';
         let currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + apiKey;
