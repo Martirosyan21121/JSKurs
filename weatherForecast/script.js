@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 
     function fetchWeatherData(location) {
-        let apiKey = '274ec8c7fc4ea2bec6f63fc0a68c3c38';
+        let apiKey = '';
         let currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + apiKey;
         let forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + location + '&appid=' + apiKey;
 
