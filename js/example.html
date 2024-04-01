@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: 250px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" disabled>
+    <br>
+    <input type="button" value="1" class="num">
+    <input type="button" value="2" class="num">
+    <input type="button" value="3" class="num">
+    <input type="button" value="+" class="operator">
+    <br>
+    <input type="button" value="4" class="num">
+    <input type="button" value="5" class="num">
+    <input type="button" value="6" class="num">
+    <input type="button" value="-" class="operator">
+    <br>
+    <input type="button" value="7" class="num">
+    <input type="button" value="8" class="num">
+    <input type="button" value="9" class="num">
+    <input type="button" value="*" class="operator">
+    <br>
+    <input type="button" value="C" id="clear">
+    <input type="button" value="0" class="num">
+    <input type="button" value="=" id="calculate">
+    <input type="button" value="/" class="operator">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var $display = $('#display');
+
+        $('.num').click(function(){
+            $display.val($display.val() + $(this).val());
+        });
+
+        $('.operator').click(function(){
+            $display.val($display.val() + $(this).val());
+        });
+
+        $('#clear').click(function(){
+            $display.val('');
+        });
+
+        $('#calculate').click(function(){
+            $display.val(eval($display.val()));
+        });
+    });
+</script>
+</body>
+</html>

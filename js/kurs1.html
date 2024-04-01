@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Data Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<table id="data-table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Data will be populated here dynamically -->
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const data = [
+            { id: 1, name: 'John Doe', email: 'john@example.com', age: 30 },
+            { id: 2, name: 'Jane Doe', email: 'jane@example.com', age: 25 },
+            { id: 3, name: 'Alice', email: 'alice@example.com', age: 35 },
+            // Add more data as needed
+        ];
+
+        const tableBody = document.querySelector('#data-table tbody');
+
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+        <td>${item.id}</td>
+        <td contenteditable>${item.name}</td>
+        <td contenteditable>${item.email}</td>
+        <td contenteditable>${item.age}</td>
+      `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        renderTable(data);
+
+        // Sorting
+        function sortTable(colIndex, asc = true) {
+            const sortedData = [...data].sort((a, b) => {
+                const valA = a[Object.keys(a)[colIndex]];
+                const valB = b[Object.keys(b)[colIndex]];
+                return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+            renderTable(sortedData);
+        }
+
+        document.querySelectorAll('#data-table th').forEach((header, index) => {
+            header.addEventListener('click', () => {
+                const currentHeader = document.querySelector('.header-sort');
+                if (currentHeader) {
+                    currentHeader.classList.remove('header-sort');
+                }
+                header.classList.add('header-sort');
+                const sortOrder = header.classList.contains('asc') ? 'desc' : 'asc';
+                sortTable(index, sortOrder === 'asc');
+                header.classList.toggle('asc');
+                header.classList.toggle('desc');
+            });
+        });
+
+        // Filtering
+        document.querySelector('#filter-btn').addEventListener('click', () => {
+            const filterValue = document.querySelector('#filter-input').value.toLowerCase();
+            const filteredData = data.filter(item =>
+                Object.values(item).some(value =>
+                    value.toString().toLowerCase().includes(filterValue)
+                )
+            );
+            renderTable(filteredData);
+        });
+
+        // Pagination (Not implemented in this basic example)
+
+    });
+</script>
+
+</body>
+</html>

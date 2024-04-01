@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>jQuery Tutorials</title>
+</head>
+<body>
+
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+<h2 id="text">64564646464</h2>
+<button>sss</button>
+
+<br>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+<br>
+
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<br>
+<br>
+<p id="1">If you click on the "Hide" button, I will disappear.</p>
+<p id="2">If you click on the "Hide" button, I will disappear.</p>
+<button id="buttonH">Hide</button>
+<button id="buttonSh">Show</button>
+<br>
+<br>
+<p id="pt">If you click on the "Hide" button, I will disappear.</p>
+<button id="buttonT">Show</button>
+<br>
+
+<button id="btnO">Click to fade in boxes</button><br><br>
+<button id="btn">Click to fadeout in boxes</button><br><br>
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("p").click(function(){
+            $(this).hide();
+        });
+    });
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#text").hide();
+        });
+    });
+
+    $(document).ready(function(){
+        $("input").focus(function(){
+            $(this).css("background-color", "yellow");
+        });
+        $("input").blur(function(){
+            $(this).css("background-color", "green");
+        });
+    });
+
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("p").hide();
+        });
+        $("#show").click(function(){
+            $("p").show();
+        });
+    });
+
+    $(document).ready(function(){
+        $('#buttonH').click(function(){
+            $('#1').hide(2000);
+            $('#2').hide(2000);
+        });
+        $("#buttonSh").click(function(){
+            $('#1').show(2000);
+            $('#2').show(2000);
+        });
+    });
+
+    $("#buttonT").click(function(){
+        $('#pt').toggle();
+    });
+
+    $(document).ready(function(){
+        $("#btnO").click(function(){
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+        });
+        $("#btn").click(function() {
+            $("#div1").fadeOut();
+            $("#div2").fadeOut("slow");
+            $("#div3").fadeOut(3000);
+        });
+        });
+</script>
+</html>
